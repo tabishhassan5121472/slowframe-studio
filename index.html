@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLOWFRAME — Motion Design Studio</title>
+  <meta name="description" content="SLOWFRAME is a motion-design studio. One bullet, one can, 120 frames — a scroll-driven high-speed-camera story.">
+  <meta name="theme-color" content="#f3eee5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200;300;400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#finale">Skip the film</a>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="SLOWFRAME home">SLOW<span>FRAME</span></a>
+    <span class="reel">REEL 01 / IMPACT</span>
+    <button class="topbar-cta" type="button" data-goto="finale">Contact</button>
+  </header>
+
+  <main id="top">
+    <!-- ============ THE FILM: one pinned, scroll-driven shot ============ -->
+    <section class="film" id="film" aria-label="Scroll-driven film: a bullet hits a drink can, filmed at 100,000 frames per second">
+      <div class="stage">
+        <div class="clip" id="clip">
+          <div class="backdrop" aria-hidden="true"></div>
+          <div class="blueprint" id="blueprint" aria-hidden="true"></div>
+
+          <div class="world" id="world" role="img" aria-label="A brass bullet travelling toward a brushed-aluminium SLOWFRAME drink can">
+            <div class="floor" id="floor"></div>
+            <div class="trail" id="trail"></div>
+            <div class="bullet" id="bullet"></div>
+            <div class="can" id="can"></div>
+            <div class="dim" id="dim"><span class="dim-label" id="dimLabel">Δx 456.0 mm</span></div>
+          </div>
+
+          <canvas class="particles" id="particles" aria-hidden="true"></canvas>
+          <div class="flash" id="flash" aria-hidden="true"></div>
+
+          <!-- phone feed UI, sits exactly on the clipped rect -->
+          <div class="feed" id="feed" aria-hidden="true">
+            <div class="feed-status"><span>9:41</span><span class="feed-icons"><i></i><i></i><i></i></span></div>
+            <div class="feed-island"></div>
+            <div class="feed-tabs"><span>Following</span><b>For you</b></div>
+            <ul class="feed-rail">
+              <li><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.7 4.5c2.2 0 3.6 1.3 5.3 3.2 1.7-1.9 3.1-3.2 5.3-3.2 3.7 0 5.8 3.9 4.3 7.3C19.5 16.4 12 21 12 21z"/></svg><span>2.4M</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></svg><span>18.2K</span></li>
+              <li><svg viewBox="0 0 24 24"><path d="M14 4l7 7-7 7v-4c-5 0-8 1.5-11 5 1-6 4-10 11-11z"/></svg><span>96K</span></li>
+            </ul>
+            <div class="feed-caption">
+              <b>@slowframe.studio</b>
+              <span>1.2 ms of real time. 7 seconds of your attention. #frame000</span>
+              <div class="feed-sound">♪ original sound — slowframe</div>
+            </div>
+            <div class="feed-progress"><i id="feedProgress"></i></div>
+          </div>
+        </div>
+
+        <div class="phone" id="phone" aria-hidden="true"></div>
+
+        <!-- viewfinder HUD -->
+        <div class="hud" id="hud">
+          <span class="bracket tl" aria-hidden="true"></span>
+          <span class="bracket tr" aria-hidden="true"></span>
+          <span class="bracket bl" aria-hidden="true"></span>
+          <span class="bracket br" aria-hidden="true"></span>
+
+          <div class="hud-tl"><span class="rec"><i aria-hidden="true"></i>REC</span><span id="timecode" class="tc">00:00:00:00</span></div>
+          <div class="hud-tr"><b>100,000 FPS</b><span>1/200,000 s · ISO 3200 · ƒ/2.8</span></div>
+          <div class="hud-br"><span id="frameNo">FRAME 0000 / 0120</span><span class="mode" id="mode">MODE · RENDER</span></div>
+
+          <div class="counter" aria-live="off">
+            <span class="counter-label" id="counterLabel">FRAMES TO IMPACT</span>
+            <span class="counter-num" id="counter">120</span>
+          </div>
+
+          <div class="beats">
+            <p class="beat beat-intro" data-in="0" data-out="0.075">
+              <span class="eyebrow">Motion design studio</span>
+              Everything looks better<br>at <em>100,000</em> frames<br>per second.
+              <span class="hint">Scroll to roll the camera <i aria-hidden="true">↓</i></span>
+            </p>
+            <p class="beat" data-in="0.1" data-out="0.185">One bullet.<br>One can.<br>120 frames.</p>
+            <p class="beat" data-in="0.2" data-out="0.275">You've been watching<br>one bullet for <em>7 seconds.</em></p>
+            <p class="beat" data-in="0.3" data-out="0.42">It was never real.</p>
+            <p class="beat" data-in="0.445" data-out="0.53">That's the point.</p>
+            <p class="beat beat-small" data-in="0.545" data-out="0.6">Hold still.</p>
+          </div>
+        </div>
+
+        <div class="pitch" id="pitch">
+          <span class="eyebrow">What we do</span>
+          <h2>We make visuals people <em>can't stop</em> watching.</h2>
+          <p>Product films, title sequences and social loops — built frame by frame, so the scroll never wins.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINALE ============ -->
+    <section class="finale" id="finale" aria-labelledby="wordmark">
+      <span class="eyebrow">Frame 000 · end of reel</span>
+      <h2 class="wordmark" id="wordmark" aria-label="SLOWFRAME">
+        <span aria-hidden="true">S</span><span aria-hidden="true">L</span><span aria-hidden="true">O</span><span aria-hidden="true">W</span><span aria-hidden="true">F</span><span aria-hidden="true">R</span><span aria-hidden="true">A</span><span aria-hidden="true">M</span><span aria-hidden="true">E</span>
+      </h2>
+      <p class="tagline">Visuals <i>|</i> Ideas <i>|</i> Impact</p>
+      <div class="actions">
+        <button class="btn-primary" type="button" id="contactBtn">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="contactText">Start a project — hello@slowframe.studio</span>
+        </button>
+        <button class="btn-ghost" type="button" data-goto="top">Rewind the reel ⟲</button>
+      </div>
+      <p class="sr-status" id="status" role="status" aria-live="polite"></p>
+
+      <dl class="facts">
+        <div><dt>Shot</dt><dd>1.2 ms of real time</dd></div>
+        <div><dt>Built with</dt><dd>SVG, canvas &amp; scroll</dd></div>
+        <div><dt>Studio</dt><dd>Remote, every timezone</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="https://github.com/tabishhassan5121472?tab=repositories">← More projects</a>
+    <span>Designed &amp; built by <a href="https://github.com/tabishhassan5121472" target="_blank" rel="noopener">Tabish Hassan</a></span>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
